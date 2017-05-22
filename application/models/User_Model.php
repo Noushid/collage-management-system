@@ -22,6 +22,7 @@ class User_Model extends CI_Model
 
 		$this->db->where($where);
         $query = $this->db->get($this->table);
+        var_dump($query);
         if ($query->num_rows() > 0)
         {
             return TRUE;

@@ -26,7 +26,7 @@ class Exam_Model extends CI_Model
 	public function view_all()
 	{
         $this->db->select($this->fields);
-        $this->db->join('departments', 'departments.id = examtypes.departments_id');;
+        $this->db->join('departments', 'departments.id = examtypes.department_id');;
 		$result = $this->db->get('examtypes');
 		if($result->num_rows() >= 1)
 		{

@@ -47,7 +47,7 @@ CREATE TABLE `applications` (
   `statistics` int(11) DEFAULT NULL,
   `status` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -56,7 +56,7 @@ CREATE TABLE `applications` (
 
 LOCK TABLES `applications` WRITE;
 /*!40000 ALTER TABLE `applications` DISABLE KEYS */;
-INSERT INTO `applications` VALUES (17,'sdf','ert',NULL,NULL,'rt','76',7,6,5,4,3,2,1,0,9,'8',8,7,6,0,0,'approve'),(18,'noufalck','ert',NULL,NULL,'rt','76',7,6,5,4,3,2,1,0,10,'8',8,7,6,0,0,'approve'),(22,'xxx','bbb',NULL,NULL,'nnn','786543',67,88,99,0,77,66,55,44,33,'bbv',22,22,11,77,88,'approve'),(26,'murshid','hbbb',NULL,NULL,'ghh','786543',5,4,3,2,6,7,8,9,7,'gh',5,4,4,3,2,'approve'),(29,'rrrr','tttt',NULL,NULL,'yyyy','uuuuu',0,0,0,0,0,0,0,0,0,'aaaa',0,0,0,0,0,'approve');
+INSERT INTO `applications` VALUES (16,'nbv','sdfgh',NULL,NULL,'wertyu','56',78,6,5,4,3,2,1,0,9,'dfghj',8,7,6,5,4,'listed'),(17,'sdf','ert',NULL,NULL,'rt','76',7,6,5,4,3,2,1,0,9,'8',8,7,6,0,0,'listed'),(18,'noufalck','ert',NULL,NULL,'rt','76',7,6,5,4,3,2,1,0,10,'8',8,7,6,0,0,'listed'),(20,'noufal','asdfghjk',NULL,NULL,'qwertyu','652136',3,4,5,6,7,8,9,7,56,'bba',5,4,3,2,1,'listed'),(21,'noufal','asdfghjk',NULL,NULL,'qwertyu','652136',3,4,5,6,7,8,9,7,56,'bba',5,4,3,2,1,'listed'),(22,'xxx','bbb',NULL,NULL,'nnn','786543',67,88,99,0,77,66,55,44,33,'bbv',22,22,11,77,88,'listed'),(26,'murshid','hbbb',NULL,NULL,'ghh','786543',5,4,3,2,6,7,8,9,7,'gh',5,4,4,3,2,'listed'),(27,'panth','rhbbb',NULL,NULL,'r','r',9,6,6,5,4,3,2,1,3,'gh',344,5,77,88,99,'listed');
 /*!40000 ALTER TABLE `applications` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -75,7 +75,7 @@ CREATE TABLE `courses` (
   PRIMARY KEY (`id`),
   KEY `fk_courses_department1_idx` (`department_id`),
   CONSTRAINT `fk_courses_department1` FOREIGN KEY (`department_id`) REFERENCES `department` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=114 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -84,7 +84,7 @@ CREATE TABLE `courses` (
 
 LOCK TABLES `courses` WRITE;
 /*!40000 ALTER TABLE `courses` DISABLE KEYS */;
-INSERT INTO `courses` VALUES (73,'new Cource','',0),(75,'first','',7),(81,'fgj','',10),(84,'ffb','bbbbbbbb',10),(85,'dvc','dg',11),(89,'jj','hf',0),(90,'jkfgjb','g',0),(91,'hjhj','b',0),(92,'hd','edg',0),(93,'fgj','fh',0),(94,'fhh','gf',0),(95,'afds','d',0),(96,'nb','fbv',0),(97,'ggf','gf',0),(101,'bca','fhxh',7),(103,'BCA','SIMPLEE',11),(104,'mca','cvdf',11),(105,'eng','dfg',7),(106,'eng','dvx',13),(107,'msd','c,kv',13),(108,'mca','fh',7),(109,'khjgh','likj',0),(112,'ba eng','rgfs',15),(113,'ma eng','ghg',15);
+INSERT INTO `courses` VALUES (73,'new Cource','',0),(74,'second','',7),(75,'first','',7),(81,'fgj','',10),(84,'ffb','bbbbbbbb',10),(85,'dvc','dg',11),(89,'jj','hf',0),(90,'jkfgjb','g',0),(91,'hjhj','b',0),(92,'hd','edg',0),(93,'fgj','fh',0),(94,'fhh','gf',0),(95,'afds','d',0),(96,'nb','fbv',0),(97,'ggf','gf',0),(101,'bca','fhxh',7),(103,'BCA','SIMPLEE',11),(104,'mca','cvdf',11),(105,'eng','dfg',7),(106,'eng','dvx',13);
 /*!40000 ALTER TABLE `courses` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -124,7 +124,7 @@ CREATE TABLE `departments` (
   `name` varchar(50) DEFAULT NULL,
   `description` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -133,7 +133,7 @@ CREATE TABLE `departments` (
 
 LOCK TABLES `departments` WRITE;
 /*!40000 ALTER TABLE `departments` DISABLE KEYS */;
-INSERT INTO `departments` VALUES (7,'new department','new'),(13,'computer science','thmfb'),(15,'ba','jhkj');
+INSERT INTO `departments` VALUES (7,'new department','new'),(13,'computer science','thmfb'),(14,'jgdnf','g4eg');
 /*!40000 ALTER TABLE `departments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -155,12 +155,11 @@ CREATE TABLE `examresults` (
   `5th_sub` varchar(50) DEFAULT NULL,
   `6th_sub` varchar(50) DEFAULT NULL,
   `total` int(20) DEFAULT NULL,
-  `semester_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `student` (`student_id`),
   KEY `exam_type` (`exam_type_id`),
   CONSTRAINT `exam_type` FOREIGN KEY (`exam_type_id`) REFERENCES `examtypes` (`id`),
-  CONSTRAINT `student` FOREIGN KEY (`student_id`) REFERENCES `student` (`id`)
+  CONSTRAINT `student` FOREIGN KEY (`student_id`) REFERENCES `registrations` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -185,9 +184,11 @@ CREATE TABLE `examtypes` (
   `name` varchar(20) DEFAULT NULL,
   `time` time DEFAULT NULL,
   `date` date DEFAULT NULL,
-  `departments_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+  `department_id` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `department_id` (`department_id`),
+  CONSTRAINT `department_id` FOREIGN KEY (`department_id`) REFERENCES `departments` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -196,7 +197,6 @@ CREATE TABLE `examtypes` (
 
 LOCK TABLES `examtypes` WRITE;
 /*!40000 ALTER TABLE `examtypes` DISABLE KEYS */;
-INSERT INTO `examtypes` VALUES (1,'internal','00:00:00','0000-00-00',NULL),(2,'sgj','00:00:00','0000-00-00',NULL),(3,'sgj','00:00:00','0000-00-00',NULL),(4,'fbn','00:00:00','0000-00-00',NULL),(5,'fbn','00:00:00','0000-00-00',NULL),(6,'fbn','00:00:00','0000-00-00',NULL),(7,'fbn','00:00:00','0000-00-00',NULL),(8,'fbn','00:00:00','0000-00-00',NULL),(9,'fbn','00:00:00','0000-00-00',NULL),(10,'fbn','00:00:00','0000-00-00',NULL),(11,'fbn','00:00:00','0000-00-00',NULL),(12,'jeshma','00:00:45','0000-00-00',NULL),(13,'djgf','00:00:00','0000-00-00',NULL),(14,'internal','00:04:34','2016-12-01',NULL),(15,'ffckl','00:00:00','0000-00-00',NULL),(16,'ffckl','00:00:00','0000-00-00',NULL),(17,'internal','00:04:34','2016-12-01',NULL),(18,'internal','00:04:34','2016-12-01',NULL),(19,'1 st semester','02:34:56','2016-12-01',NULL),(20,'internal','00:00:00','2016-12-01',13),(21,'2nd internal','03:45:55','2016-12-01',0),(22,'3rd internal','00:00:00','2016-12-01',0),(23,'4th internal','03:49:30','2016-12-01',0),(24,'1stsem intrnl','05:44:32','2016-12-01',0),(25,'gchj','43:56:45','0000-00-00',0),(26,'rtdf','00:04:56','0000-00-00',0),(27,'wertfhvb','00:04:56','2016-12-01',0),(28,'internal-1st','43:56:45','2016-12-01',13),(29,'likujy','00:00:00','2016-12-01',7);
 /*!40000 ALTER TABLE `examtypes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -224,7 +224,7 @@ CREATE TABLE `marks` (
   `total_marks` int(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `studentid` (`student_id`),
-  CONSTRAINT `studentid` FOREIGN KEY (`student_id`) REFERENCES `student` (`id`)
+  CONSTRAINT `studentid` FOREIGN KEY (`student_id`) REFERENCES `registrations` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -251,7 +251,7 @@ CREATE TABLE `parentlogin` (
   `student_id` int(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `parentstudents` (`student_id`),
-  CONSTRAINT `parentstudents` FOREIGN KEY (`student_id`) REFERENCES `student` (`id`)
+  CONSTRAINT `parentstudents` FOREIGN KEY (`student_id`) REFERENCES `registrations` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -273,13 +273,14 @@ DROP TABLE IF EXISTS `payroll`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `payroll` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
   `date` date DEFAULT NULL,
   `amount` int(20) DEFAULT NULL,
   `staff_id` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `staff` (`staff_id`),
   CONSTRAINT `staff` FOREIGN KEY (`staff_id`) REFERENCES `staffs` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -288,8 +289,51 @@ CREATE TABLE `payroll` (
 
 LOCK TABLES `payroll` WRITE;
 /*!40000 ALTER TABLE `payroll` DISABLE KEYS */;
-INSERT INTO `payroll` VALUES (1,'0000-00-00',0,1),(2,'0000-00-00',0,1),(3,'1993-12-23',10254,1),(4,'2016-12-01',10212,11),(5,'2016-12-01',544,5),(6,'2016-12-01',56,34),(7,'2016-12-01',654,32),(8,'2016-12-01',234,47),(9,'0000-00-00',0,50);
 /*!40000 ALTER TABLE `payroll` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `registrations`
+--
+
+DROP TABLE IF EXISTS `registrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `registrations` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
+  `dob` date DEFAULT NULL,
+  `address` varchar(150) DEFAULT NULL,
+  `gender` varchar(1) DEFAULT NULL,
+  `father` varchar(50) DEFAULT NULL,
+  `mother` varchar(50) DEFAULT NULL,
+  `pin` int(10) DEFAULT NULL,
+  `income` int(20) DEFAULT NULL,
+  `number` int(15) DEFAULT NULL,
+  `mail` varchar(50) DEFAULT NULL,
+  `religion_community` varchar(50) DEFAULT NULL,
+  `cast` varchar(50) DEFAULT NULL,
+  `panchayath` varchar(50) DEFAULT NULL,
+  `taluk` varchar(50) DEFAULT NULL,
+  `district` varchar(50) DEFAULT NULL,
+  `martia_status` varchar(50) DEFAULT NULL,
+  `spouse_name_address` varchar(50) DEFAULT NULL,
+  `institution_last_attend` varchar(50) DEFAULT NULL,
+  `physically_handicapped` varchar(50) DEFAULT NULL,
+  `course_id` int(50) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `couse` (`course_id`),
+  CONSTRAINT `couse` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `registrations`
+--
+
+LOCK TABLES `registrations` WRITE;
+/*!40000 ALTER TABLE `registrations` DISABLE KEYS */;
+/*!40000 ALTER TABLE `registrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -330,7 +374,7 @@ CREATE TABLE `semester` (
   PRIMARY KEY (`id`),
   KEY `fk_semester_cources1_idx` (`cources_id`),
   CONSTRAINT `fk_semester_cources1` FOREIGN KEY (`cources_id`) REFERENCES `courses` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -339,7 +383,7 @@ CREATE TABLE `semester` (
 
 LOCK TABLES `semester` WRITE;
 /*!40000 ALTER TABLE `semester` DISABLE KEYS */;
-INSERT INTO `semester` VALUES (2,'1 st semester',74),(3,'secoond sem',74),(4,'www',74),(5,'uy',74),(6,'3rd sen',74),(7,'4th sem',74),(8,'5th sem',74),(9,'6th sem',103),(10,'1st sem',104),(11,'2nd sem',104),(12,'1st sem',105),(13,'1st',106),(14,'2nd sem',106),(15,'6th sem',74),(16,'3dr sem',106),(17,'7th sem',101),(18,'1st sem',112);
+INSERT INTO `semester` VALUES (2,'1 st semester',74),(3,'secoond sem',74),(4,'www',74),(5,'uy',74),(6,'3rd sen',74),(7,'4th sem',74),(8,'5th sem',74),(9,'6th sem',103),(10,'1st sem',104),(11,'2nd sem',104),(12,'1st sem',105),(13,'1st',106),(14,'2nd sem',106);
 /*!40000 ALTER TABLE `semester` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -359,7 +403,7 @@ CREATE TABLE `semester_subject` (
   KEY `fk_semester_subject_semester1_idx` (`semester_id`),
   CONSTRAINT `fk_semester_subject_semester1` FOREIGN KEY (`semester_id`) REFERENCES `semester` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_semester_subject_subject1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -368,7 +412,6 @@ CREATE TABLE `semester_subject` (
 
 LOCK TABLES `semester_subject` WRITE;
 /*!40000 ALTER TABLE `semester_subject` DISABLE KEYS */;
-INSERT INTO `semester_subject` VALUES (1,2,16),(2,13,16),(3,12,2),(4,13,2),(5,3,3),(6,11,2),(7,12,18);
 /*!40000 ALTER TABLE `semester_subject` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -387,7 +430,7 @@ CREATE TABLE `staffattend` (
   PRIMARY KEY (`id`),
   KEY `staffid` (`staff_id`),
   CONSTRAINT `staffid` FOREIGN KEY (`staff_id`) REFERENCES `staffs` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -396,7 +439,7 @@ CREATE TABLE `staffattend` (
 
 LOCK TABLES `staffattend` WRITE;
 /*!40000 ALTER TABLE `staffattend` DISABLE KEYS */;
-INSERT INTO `staffattend` VALUES (1,1,'56',NULL),(2,20,'34',NULL),(3,12,'45',NULL),(4,36,'67',NULL),(5,14,'34',NULL),(6,14,'34',NULL),(7,6,'23',NULL),(8,6,'23',NULL),(9,36,'34',NULL),(10,36,'34',NULL),(11,36,'12',NULL),(12,37,'23',NULL),(13,38,'56',NULL),(14,38,'56',NULL),(15,34,'23',NULL),(16,34,'23',NULL),(17,33,'23',NULL),(18,33,'23',NULL),(19,10,'21',NULL),(20,10,'21',NULL),(21,26,'34',NULL),(22,17,'12',NULL),(23,8,'efff',NULL),(24,28,'56',NULL),(25,19,'89',NULL),(26,7,'23',NULL),(27,43,'23',NULL);
+INSERT INTO `staffattend` VALUES (1,1,'56',NULL),(2,20,'34',NULL),(3,12,'45',NULL),(4,36,'67',NULL),(5,14,'34',NULL),(6,14,'34',NULL),(7,6,'23',NULL),(8,6,'23',NULL),(9,36,'34',NULL),(10,36,'34',NULL),(11,36,'12',NULL),(12,37,'23',NULL),(13,38,'56',NULL),(14,38,'56',NULL),(15,34,'23',NULL),(16,34,'23',NULL),(17,33,'23',NULL),(18,33,'23',NULL),(19,10,'21',NULL),(20,10,'21',NULL),(21,26,'34',NULL),(22,17,'12',NULL),(23,8,'efff',NULL),(24,28,'56',NULL),(25,19,'89',NULL);
 /*!40000 ALTER TABLE `staffattend` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -413,7 +456,7 @@ CREATE TABLE `staffs` (
   `address` varchar(350) DEFAULT NULL,
   `departments_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -422,52 +465,8 @@ CREATE TABLE `staffs` (
 
 LOCK TABLES `staffs` WRITE;
 /*!40000 ALTER TABLE `staffs` DISABLE KEYS */;
-INSERT INTO `staffs` VALUES (28,'PSYBO','AAA',1),(32,'success','sss',1),(34,'test','next',3),(36,'sharmina','ruejgjddj',2),(37,'husna','jfgfhjggfhgd',3),(38,'nisha','chali',4),(39,'rinna','chamadan',2),(40,'ninu','kt',3),(41,'noufu','ck',1),(45,'jeshma','dd',3),(50,'fdfs','ljkhjgh',15);
+INSERT INTO `staffs` VALUES (1,'aaaaa','aaa',1),(2,'WW','WW',3),(3,'WW','WW',3),(4,'successssSSS','sss',1),(5,'successssSSS','sss',1),(6,'SSS','SSS',3),(7,'SSS','SSS',3),(8,'SSS','SSS',3),(9,'success','sss',1),(10,'dsd','dd',1),(11,'dsd','dd',1),(12,'dd','dd',1),(13,'dd','dd',1),(14,'ccc','ccc',1),(15,'ccc','ccc',1),(16,'ff','fff',1),(17,'ff','fff',1),(18,'ff','fff',1),(19,'ff','fff',1),(20,'ff','fff',1),(21,'ff','fff',1),(22,'ff','fff',1),(23,'ff','fff',1),(24,'ff','fff',1),(25,'ff','fff',1),(26,'PSYBO','AAA',1),(27,'PSYBO','AAA',1),(28,'PSYBO','AAA',1),(29,'dfgg','dd',1),(30,'dd','dd',1),(31,'dd','dd',1),(32,'success','sss',1),(33,'dd','ddd',1),(34,'test','next',3),(35,'noufal','gjgfjn',2),(36,'sharmina','ruejgjddj',2),(37,'husna','jfgfhjggfhgd',3),(38,'nisha','chali',4),(39,'rinna','chamadan',2),(40,'ninu','kt',3);
 /*!40000 ALTER TABLE `staffs` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `student`
---
-
-DROP TABLE IF EXISTS `student`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `student` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) DEFAULT NULL,
-  `dob` date DEFAULT NULL,
-  `address` varchar(150) DEFAULT NULL,
-  `gender` varchar(1) DEFAULT NULL,
-  `father` varchar(50) DEFAULT NULL,
-  `mother` varchar(50) DEFAULT NULL,
-  `pin` int(10) DEFAULT NULL,
-  `income` int(20) DEFAULT NULL,
-  `number` int(15) DEFAULT NULL,
-  `mail` varchar(50) DEFAULT NULL,
-  `religion_community` varchar(50) DEFAULT NULL,
-  `cast` varchar(50) DEFAULT NULL,
-  `panchayath` varchar(50) DEFAULT NULL,
-  `taluk` varchar(50) DEFAULT NULL,
-  `district` varchar(50) DEFAULT NULL,
-  `martia_status` varchar(50) DEFAULT NULL,
-  `spouse_name_address` varchar(50) DEFAULT NULL,
-  `institution_last_attend` varchar(50) DEFAULT NULL,
-  `physically_handicapped` varchar(50) DEFAULT NULL,
-  `course_id` int(50) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `course` (`course_id`),
-  CONSTRAINT `couse` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `student`
---
-
-LOCK TABLES `student` WRITE;
-/*!40000 ALTER TABLE `student` DISABLE KEYS */;
-/*!40000 ALTER TABLE `student` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -506,7 +505,6 @@ CREATE TABLE `userlogin` (
   `user_name` varchar(50) DEFAULT NULL,
   `password` varchar(50) DEFAULT NULL,
   `student_id` varchar(10) DEFAULT NULL,
-  `usertype` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -517,7 +515,7 @@ CREATE TABLE `userlogin` (
 
 LOCK TABLES `userlogin` WRITE;
 /*!40000 ALTER TABLE `userlogin` DISABLE KEYS */;
-INSERT INTO `userlogin` VALUES (1,'husna','202cb962ac59075b964b07152d234b70','12',NULL),(2,'sna','127','15',NULL),(3,'jesh','1301','9',NULL);
+INSERT INTO `userlogin` VALUES (1,'husna','202cb962ac59075b964b07152d234b70','12'),(2,'sna','127','15'),(3,'jesh','1301','9');
 /*!40000 ALTER TABLE `userlogin` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -530,4 +528,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-04-06 15:05:44
+-- Dump completed on 2016-03-31 12:32:01

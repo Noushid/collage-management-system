@@ -69,7 +69,7 @@ class Exam_Controller extends Check_Logged
 				     'date' => $this->input->post('date'),
 				     'time' => $this->input->post('time'),
 				     'duration' => $this->input->post('duration'),
-				     'departments_id' => $this->input->post('departments')
+				     'department_id' => $this->input->post('departments')
 			         ];
 			        if ($this->Exam_Model->add($data) != FALSE) 
 			         {

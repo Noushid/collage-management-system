@@ -63,7 +63,7 @@ class Payroll_Controller extends Check_Logged
 			$this->form_validation->set_rules('amount','amount','required');	
 			if($this->form_validation->run() === FALSE)		
 			{
-				var_dump('fail');
+				
 				$this->load->view('admin/Add_payroll');
 			}
 			else

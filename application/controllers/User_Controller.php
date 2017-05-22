@@ -51,7 +51,7 @@ class User_controller extends Check_Logged
 			$password = $this->input->post('password');
 
 			
-			$password = md5($password);
+			//$password = md5($password);
 			if($this->User_Model->login($username, $password) === TRUE)
 			{
 				$userdata = [

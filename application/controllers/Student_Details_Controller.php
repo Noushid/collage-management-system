@@ -148,8 +148,8 @@ class Student_Details_Controller extends Check_Logged
         $course = $this->input->post('course');
 
         $where = [
-            'students.name' => $name,
-            'students.cource_id' => $course
+            'student.name' => $name,
+            'student.course_id' => $course
         ];
 
         $students = $this->Student_Details_Model->view_where($where);
