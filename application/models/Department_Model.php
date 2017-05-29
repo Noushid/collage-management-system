@@ -53,6 +53,7 @@ class Department_Model extends CI_Model
     public function delete($id)
 	 {
 	    $this->db->where('id',$id);
+	    $this->db->query("SET FOREIGN_KEY_CHECKS = 0");
 		if($this->db->delete($this->table) === TRUE)
 		{
 			return TRUE;

@@ -7,6 +7,13 @@ class Attendence_Model extends CI_Model
 {
 	protected $table = 'staffattend';
 
+
+protected $fields = [
+        'staffattend.staff_id',
+        'staffattend.attendance',
+        'staffattend.date'
+    ];
+
 	public function __construct()
 	{
 		parent::__construct();
@@ -91,6 +98,19 @@ class Attendence_Model extends CI_Model
 		else
 		{
 			return FALSE;
+		}
+    }
+
+    public function delete($id)
+    {   
+    	$this->db->where('id',$id);
+    	if($this->db->delete($this->table) === TRUE)
+		{
+			return TRUE;
+		}
+		else
+		{
+		  return FALSE;
 		}
     }
 }	

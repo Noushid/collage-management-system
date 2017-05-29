@@ -10,7 +10,7 @@ class Payroll_Model extends CI_Model
     protected $fields = [
         'payroll.date',
         'payroll.amount',
-        'staff.name'
+        'payroll.name'
     ];
 	public function __construct()
 	{
@@ -76,6 +76,19 @@ class Payroll_Model extends CI_Model
 			return FALSE;
 		}
 		
+    }
+
+    public function delete($id)
+	 {
+	    $this->db->where('id',$id);
+		if($this->db->delete($this->table) === TRUE)
+		{
+			return TRUE;
+		}
+		else
+		{
+			return FALSE;
+		}
     }
 
     public function get_last_month()

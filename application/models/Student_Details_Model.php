@@ -99,6 +99,20 @@ class Student_Details_Model extends CI_Model
 			return FALSE;
 		}
 	}
+
+
+	public function delete($id)
+	 {
+	    $this->db->where('id',$id);
+		if($this->db->delete($this->table) === TRUE)
+		{
+			return TRUE;
+		}
+		else
+		{
+			return FALSE;
+		}
+    }
 }
 
  ?>

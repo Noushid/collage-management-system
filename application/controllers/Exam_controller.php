@@ -87,11 +87,10 @@ class Exam_Controller extends Check_Logged
 			          }
 			
 
-		        
-	    }
-
-
 		        }
+
+
+		    }
 
 		 public function delete($id)
 		

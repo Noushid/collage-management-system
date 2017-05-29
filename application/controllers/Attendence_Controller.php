@@ -56,6 +56,24 @@ defined('BASEPATH') OR exit('no direct script access allowed');
 			    $this->load->view('admin/view_attendence',$data);
 			}
 		
-	}	}
+	      }
+	}
+
+
+        public function delete($id)
+		  {
+
+		   if($this->Attendence_Model->delete($id))
+		      {
+                 redirect($_SERVER['HTTP_REFERER']);
+	       	  }
+		   else
+		      {
+			    var_dump('fail');
+		      }
+
+	      }
+
+
  } 
  ?>

@@ -109,16 +109,16 @@ class Student_Details_Controller extends Check_Logged
 						// 'pin'=>$this->input->post('mother'),
 						 'income'=>$this->input->post('income'),
 						'phone'=>$this->input->post('phone'),
-						 'email'=>$this->input->post('mail'),
-						 'community'=>$this->input->post('community'),
+						 'mail'=>$this->input->post('mail'),
+						 'religion_community'=>$this->input->post('community'),
 						 'cast'=>$this->input->post('cast'),
 						 'panchayath'=>$this->input->post('panchayath'),
 						 'taluk'=>$this->input->post('taluk'),
 						 'district'=>$this->input->post('district'),
 						 'marital_status'=>$this->input->post('martial_status'),
-						 'last_institute'=>$this->input->post('institute'),
-						 'physical_handicaped'=>$this->input->post('phycical'),
-						'cource_id'=>$this->input->post('course')
+						 'institution_last_attend'=>$this->input->post('institute'),
+						 'physically_handicapped'=>$this->input->post('phycical'),
+						'course_id'=>$this->input->post('course')
 						// 'cource_name'=>$this->input->post('course_name')
 
 				];
@@ -160,6 +160,26 @@ class Student_Details_Controller extends Check_Logged
 
         $this->load->view('admin/view_student_details', $data);
     }
+
+    
+		public function delete($id)
+		{
+
+		if($this->Student_Details_Model->delete($id))
+		{
+
+			redirect($_SERVER['HTTP_REFERER']);
+		}
+		else
+		{
+            echo '<script type="text/javascript">
+                    alert("delete failed,try again");
+                    window.location="'.$_SERVER['HTTP_REFERER'].'"
+                </script>';
+		}
+	
+
+	    }
 
 }
 

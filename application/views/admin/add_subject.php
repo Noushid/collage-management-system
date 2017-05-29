@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <title>admin-jamia  collage</title>
+    <title>admin-collage management system</title>
     <link rel="stylesheet" href="<?php echo base_url('admin/css/style.css')?>" type="text/css" media="all" />
     <link rel="stylesheet" href="<?php echo base_url('admin/css/jquery.timepicker.css');?>">
     <link rel="stylesheet" href="<?php echo base_url('admin/css/jquery.timepicker.min.css');?>">
@@ -42,7 +42,7 @@
     <div class="shell">
         <!-- Logo + Top Nav -->
         <div id="top">
-            <h1><a href="#">Jamia Collage</a></h1>
+            <h1><a href="#">College Management System</a></h1>
             <div id="top-navigation">
 
                 Welcome <a href="<?php echo base_url('logout'); ?>"><strong>Logout</strong></a>

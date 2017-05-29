@@ -45,7 +45,7 @@ class Payroll_Controller extends Check_Logged
 	
 		public function add()
 		{
-			$this->form_validation->set_rules('staffs','staffs','required');	
+			$this->form_validation->set_rules('staff','staff','required');	
 			$this->form_validation->set_rules('date','date','required');
 			$this->form_validation->set_rules('amount','amount','required');	
 			if($this->form_validation->run() === FALSE)		
@@ -55,10 +55,11 @@ class Payroll_Controller extends Check_Logged
 			}
 			else
 			{
-
+                
+               
 				$data=[
 
-					'staff_id' => $this->input->post('staffs'),
+					'staff_id' => $this->input->post('staff'),
 					'date' => $this->input->post('date'),
 					'amount' => $this->input->post('amount'), 
 				];
@@ -87,7 +88,7 @@ class Payroll_Controller extends Check_Logged
 		if($this->Payroll_Model->delete($id))
 		{
 
-			redirect($_SERVER['HTTP_REFERER']);
+		   redirect($_SERVER['HTTP_REFERER']);
 		}
 		else
 		{

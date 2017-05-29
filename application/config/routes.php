@@ -131,7 +131,8 @@ $route['dashboard/exam/delete/(:num)'] = 'Exam_controller/delete/$1';
 /*attendence*/
 $route['dashboard/attendance'] = 'Admin_Controller/view_attendence';
 $route['dashboard/attendance/add'] = 'Attendence_Controller/add_attendence';
-
+// $route['dashboard/attendance/delete(:num)'] = 'Attendence_Controller/delete/$1';
+$route['dashboard/attendance/delete/(:num)'] = 'Attendence_Controller/delete/$1';
 
 
 /*subject*/
@@ -142,7 +143,7 @@ $route['dashboard/subjects/add'] = 'Subject_Controller/add';
 
 $route['dashboard/payroll'] = 'Admin_Controller/view_payroll';
 $route['dashboard/payroll/add'] = 'Payroll_Controller/add';
-
+$route['dashboard/payroll/delete/(:num)'] = 'Payroll_Controller/delete/$1';
 
 
 /*student_details*/
@@ -153,6 +154,8 @@ $route['dashboard/students/add'] = 'Student_Details_Controller/add';
 $route['dashboard/students/add/submit'] = 'Student_Details_Controller/submit';
 
 $route['dashboard/students/add/(:num)'] = 'Student_Details_Controller/add_dir/$1';
+$route['dashboard/students/delete/(:num)'] = 'Student_Details_Controller/delete/$1';
+
 //$route['dashboard/payroll'] = 'Payroll_Controller/view';
 
 

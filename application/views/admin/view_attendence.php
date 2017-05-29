@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <title>admin-jamia  collage</title>
+    <title>admin-collage management</title>
     <link rel="stylesheet" href="<?php echo base_url('admin/css/style.css')?>" type="text/css" media="all" />
     <link rel="stylesheet" href="<?php echo base_url('admin/css/jquery.timepicker.css');?>">
     <link rel="stylesheet" href="<?php echo base_url('admin/css/jquery.timepicker.min.css');?>">
@@ -39,7 +39,7 @@
     <div class="shell">
         <!-- Logo + Top Nav -->
         <div id="top">
-            <h1><a href="#">Jamia Collage</a></h1>
+            <h1><a href="#">College Management System</a></h1>
             <div id="top-navigation">
                 Welcome <a href="<?php echo base_url('logout'); ?>"><strong>Logout</strong></a>
 
@@ -94,6 +94,7 @@
                                 <th>id</th>
                                 <th>name</th>
                                 <th>Attendace</th>
+                                <th>Date</th>
                             </tr>
                             <?php if (isset($result) and $result != false) {
                                 foreach ($result as $value) {
@@ -101,7 +102,8 @@
                                                 <td>'.$value->id.'</td>
                                                 <td><h3>'.$value->name.'</h3></td>
                                                 <td><h3>'.$value->attendance.'</h3></td>
-                                                <td><a href="'.base_url('dashboard/exam/delete/'.$value->id).'" class="ico del" onclick="return confirm(\' are you sure ?\')" >Delete</a></td>
+                                                <td><h3>'.$value->date.'</h3></td>
+                                                <td><a href="'.base_url('dashboard/attendance/delete/'.$value->id).'" class="ico del" onclick="return confirm(\' are you sure ?\')" >Delete</a></td>
                                         </tr>';
                                 }
 
@@ -177,7 +179,7 @@
     </div>
 </div>
 
-<?php if (isset($message)) {
+<?php if (isset($message)){
     echo $message;
 }?>
 <!-- End Container -->

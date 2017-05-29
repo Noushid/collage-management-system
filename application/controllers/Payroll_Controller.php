@@ -15,7 +15,7 @@ class Payroll_Controller extends Check_Logged
 		$this->load->helper(['url', 'form']);
 		$this->load->model('Payroll_Model');
 		$this->load->library(['form_validation']);
-		
+		$this->load->model('Staff_Model');
 	}
 
 		public function index()
@@ -68,10 +68,13 @@ class Payroll_Controller extends Check_Logged
 			}
 			else
 			{
-
+				$staff_id=$this->input->post('staff');
+                $name= $this->Staff_Model->view(['id'=>$staff_id]);
+               
+                
 				$data=[
-
-					'staff_id' => $this->input->post('staff'),
+                    'staff_id' => $this->input->post('staff'),
+					'name' => $name[0]->name,
 					'date' => $this->input->post('date'),
 					'amount' => $this->input->post('amount'), 
 				];
@@ -83,7 +86,7 @@ class Payroll_Controller extends Check_Logged
 											alert("adding success");
 											window.location = "'.base_url('dashboard/payroll').'";
 										</script>';
-					$this->load->view('admin/Add_payroll',$data);
+					$this->load->view('admin/view_payroll',$data);
 				}
 				else
 				{
@@ -96,7 +99,7 @@ class Payroll_Controller extends Check_Logged
 		}
 		public function delete($id)
 		{
-
+         
 		if($this->Payroll_Model->delete($id))
 		{
 

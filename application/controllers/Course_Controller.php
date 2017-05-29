@@ -73,7 +73,7 @@ class Course_Controller extends Check_Logged
 	 			
 
     		  $query= $this->Course_Model->add($data);
-			  if($query != FALSE)
+			  if(isset($query) && $query)
 			  {
 			  	$data['id'] = $query;
 			 	 $data['message'] = '<script type="text/javascript">
@@ -96,7 +96,7 @@ class Course_Controller extends Check_Logged
 
 		   if($this->Course_Model->delete($id))
 		      {
-
+    
 			    redirect($_SERVER['HTTP_REFERER']);
 	       	  }
 		   else
@@ -108,7 +108,7 @@ class Course_Controller extends Check_Logged
 	    public function add_semester_subject()
 	    {
 	    	$data['semester'] = $this->Staff_Model->view();
-	    	$data['subject'] = $this->Staff_Model->view();
+	    	$data['subject'] =  $this->Staff_Model->view();
 	    	$this->load->view('admin/add_semester_subject');
 	    }
 }
